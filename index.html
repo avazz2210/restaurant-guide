@@ -16,7 +16,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   
   <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/lucide-react@latest/dist/umd/lucide-react.js"></script>
   
   <style>
     body {
@@ -34,7 +34,7 @@
 
   <script type="text/babel">
     const { useState, useEffect } = React;
-    const { Search, Plus, Download, Edit2, Save, X, MapPin, Phone, Star } = lucide;
+    const { Search, Plus, Download, Edit2, Save, X, MapPin, Phone, Star } = LucideReact;
 
 // YesNoToggle component - moved outside to prevent recreation
 const YesNoToggle = ({ value, onChange }) => (
