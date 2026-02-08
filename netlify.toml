@@ -1,0 +1,16 @@
+# Netlify Configuration File
+# This tells Netlify how to build and deploy your app
+
+[build]
+  # No build command needed - we're using a simple HTML file
+  publish = "."
+  
+[functions]
+  # Where our serverless functions live
+  directory = "netlify/functions"
+
+[[redirects]]
+  # Redirect all routes to index.html for single-page app
+  from = "/*"
+  to = "/index.html"
+  status = 200
