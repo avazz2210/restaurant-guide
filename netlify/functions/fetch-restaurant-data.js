@@ -15,10 +15,10 @@ exports.handler = async (event, context) => {
   try {
     // Get the restaurant info from the request
     const { restaurantName, state, city } = JSON.parse(event.body);
-    
+
     // Get API key from environment variable (hidden from users!)
     const apiKey = process.env.GOOGLE_PLACES_API_KEY;
-    
+
     if (!apiKey) {
       return {
         statusCode: 500,
@@ -28,7 +28,7 @@ exports.handler = async (event, context) => {
 
     // Build search query
     const searchQuery = `${restaurantName}${city ? ' ' + city : ''}${state ? ' ' + state : ''}`;
-    
+
     console.log('Searching for:', searchQuery);
 
     // Step 1: Search for the place using Text Search
@@ -39,7 +39,7 @@ exports.handler = async (event, context) => {
     if (!searchResults.results || searchResults.results.length === 0) {
       return {
         statusCode: 404,
-        body: JSON.stringify({ 
+        body: JSON.stringify({
           error: 'Restaurant not found',
           message: `Could not find "${searchQuery}" on Google Places`
         })
@@ -66,8 +66,8 @@ exports.handler = async (event, context) => {
 
     // Extract address components
     let streetAddress = '';
-    let city = '';
-    let state = '';
+    let extractedCity = '';
+    let extractedState = '';
     let zipCode = '';
     let county = '';
 
@@ -80,10 +80,10 @@ exports.handler = async (event, context) => {
           streetAddress += component.long_name;
         }
         if (component.types.includes('locality')) {
-          city = component.long_name;
+          extractedCity = component.long_name;
         }
         if (component.types.includes('administrative_area_level_1')) {
-          state = component.short_name;
+          extractedState = component.short_name;
         }
         if (component.types.includes('postal_code')) {
           zipCode = component.long_name;
@@ -112,8 +112,8 @@ exports.handler = async (event, context) => {
         data: {
           name: result.name,
           address: streetAddress.trim(),
-          city: city,
-          state: state,
+          city: extractedCity,
+          state: extractedState,
           zip: zipCode,
           county: county,
           phone: result.formatted_phone_number || '',
@@ -135,9 +135,9 @@ exports.handler = async (event, context) => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ 
+      body: JSON.stringify({
         error: 'Failed to fetch restaurant data',
-        message: error.message 
+        message: error.message
       })
     };
   }
