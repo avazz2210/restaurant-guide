@@ -262,6 +262,49 @@ const RestaurantForm = ({ restaurant, onChange, onSave, onCancel, isNew, onAutoF
         </div>
       </div>
 
+
+      {/* Visit Tracking */}
+      <div className="mb-6">
+        <h3 className="text-lg font-semibold text-gray-700 mb-3 border-b pb-2">📅 Visit Tracking</h3>
+        <div className="grid grid-cols-2 gap-4">
+          <div className="col-span-2">
+            <label className="flex items-center space-x-2 cursor-pointer">
+              <input
+                type="checkbox"
+                className="w-5 h-5 text-green-600 rounded focus:ring-green-500"
+                checked={restaurant.visited || false}
+                onChange={(e) => onChange({ ...restaurant, visited: e.target.checked })}
+              />
+              <span className="text-sm font-medium text-gray-700">✅ I've visited this restaurant</span>
+            </label>
+          </div>
+
+          {restaurant.visited && (
+            <>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Last Visited</label>
+                <input
+                  type="date"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:border-orange-500 focus:outline-none"
+                  value={restaurant.lastVisited || ''}
+                  onChange={(e) => onChange({ ...restaurant, lastVisited: e.target.value })}
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Visit Count</label>
+                <input
+                  type="number"
+                  min="0"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:border-orange-500 focus:outline-none"
+                  value={restaurant.visitCount || 0}
+                  onChange={(e) => onChange({ ...restaurant, visitCount: parseInt(e.target.value) || 0 })}
+                />
+              </div>
+            </>
+          )}
+        </div>
+      </div>
       {/* Categories & Ratings */}
       <div className="mb-6">
         <h3 className="text-lg font-semibold text-gray-700 mb-3 border-b pb-2">Categories & Ratings</h3>
