@@ -27169,6 +27169,7 @@ function RestaurantManager() {
   const [filterPriceRating, setFilterPriceRating] = useState('all');
   const [filterServiceRating, setFilterServiceRating] = useState('all');
   const [filterOceanView, setFilterOceanView] = useState(false);
+  const [filterVisited, setFilterVisited] = useState('all');
   const [filterBYOB, setFilterBYOB] = useState(false);
   const [filterBar, setFilterBar] = useState(false);
   const [filterOutdoorSeating, setFilterOutdoorSeating] = useState(false);
@@ -27265,6 +27266,7 @@ function RestaurantManager() {
     const matchesBar = !filterBar || r.bar === 'Yes';
     const matchesOutdoorSeating = !filterOutdoorSeating || r.outdoorSeating === 'Yes';
     const matchesLiveMusic = !filterLiveMusic || r.liveMusic === 'Yes';
+    const matchesVisited = filterVisited === 'all' || (filterVisited === 'visited' && r.visited) || (filterVisited === 'not-visited' && !r.visited);
     
     // Advanced filters
     const matchesState = filterState === 'all' || r.state === filterState;
@@ -27272,7 +27274,7 @@ function RestaurantManager() {
     const matchesCity = !filterCity || r.city.toLowerCase().includes(filterCity.toLowerCase());
     
     return matchesSearch && matchesCategory && matchesFoodRating && matchesPriceRating && matchesServiceRating &&
-           matchesOceanView && matchesBYOB && matchesBar && matchesOutdoorSeating && matchesLiveMusic &&
+           matchesOceanView && matchesBYOB && matchesBar && matchesOutdoorSeating && matchesLiveMusic &&&& matchesVisited &&
            matchesState && matchesCounty && matchesCity;
   }).sort((a, b) => a.name.localeCompare(b.name));
 
@@ -27441,6 +27443,7 @@ function RestaurantManager() {
     setFilterBar(false);
     setFilterOutdoorSeating(false);
     setFilterLiveMusic(false);
+    setFilterVisited('all');
     setFilterState('all');
     setFilterCounty('all');
     setFilterCity('');
@@ -27460,7 +27463,7 @@ function RestaurantManager() {
       'Food Rating', 'Price Rating', 'Service Rating', 
       'Website URL', 'Hours of Operation', 'Reservations Required', 'Parking Situation', 
       'Group Size', 'Special Occasions', 'Menu Highlights',
-      'Notes', 'Source'
+      'Notes', 'Source', 'Visited', 'Last Visited', 'Visit Count'
     ];
     
     const rows = restaurants.map(r => [
@@ -27473,7 +27476,7 @@ function RestaurantManager() {
       r.rating, r.priceRating, r.serviceRating,
       r.websiteURL, r.hoursOfOperation, r.reservationsRequired, r.parkingSituation,
       r.groupSize, r.specialOccasions, r.menuHighlights,
-      r.notes, r.source
+      r.notes, r.source, (r.visited ? "Yes" : "No"), (r.lastVisited || ""), (r.visitCount || 0)
     ]);
 
     let csv = headers.join(',') + '\n';
@@ -27641,6 +27644,24 @@ function RestaurantManager() {
                     }`}
                   >
                     🎵 Live Music
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (filterVisited === 'all') setFilterVisited('visited');
+                      else if (filterVisited === 'visited') setFilterVisited('not-visited');
+                      else setFilterVisited('all');
+                    }}
+                    className={`px-3 py-2 rounded-lg font-medium text-sm transition-all ${
+                      filterVisited === 'visited'
+                        ? 'bg-green-500 text-white shadow-lg transform scale-105'
+                        : filterVisited === 'not-visited'
+                        ? 'bg-orange-500 text-white shadow-lg transform scale-105'
+                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                    }`}
+                  >
+                    {filterVisited === 'visited' ? '✅ Visited' : filterVisited === 'not-visited' ? '⭕ Not Visited' : '🔵 All'}
                   </button>
                 </div>
               </div>
