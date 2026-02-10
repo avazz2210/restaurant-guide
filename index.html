@@ -262,49 +262,6 @@ const RestaurantForm = ({ restaurant, onChange, onSave, onCancel, isNew, onAutoF
         </div>
       </div>
 
-
-      {/* Visit Tracking */}
-      <div className="mb-6">
-        <h3 className="text-lg font-semibold text-gray-700 mb-3 border-b pb-2">📅 Visit Tracking</h3>
-        <div className="grid grid-cols-2 gap-4">
-          <div className="col-span-2">
-            <label className="flex items-center space-x-2 cursor-pointer">
-              <input
-                type="checkbox"
-                className="w-5 h-5 text-green-600 rounded focus:ring-green-500"
-                checked={restaurant.visited || false}
-                onChange={(e) => onChange({ ...restaurant, visited: e.target.checked })}
-              />
-              <span className="text-sm font-medium text-gray-700">✅ I've visited this restaurant</span>
-            </label>
-          </div>
-
-          {restaurant.visited && (
-            <>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Last Visited</label>
-                <input
-                  type="date"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:border-orange-500 focus:outline-none"
-                  value={restaurant.lastVisited || ''}
-                  onChange={(e) => onChange({ ...restaurant, lastVisited: e.target.value })}
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Visit Count</label>
-                <input
-                  type="number"
-                  min="0"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:border-orange-500 focus:outline-none"
-                  value={restaurant.visitCount || 0}
-                  onChange={(e) => onChange({ ...restaurant, visitCount: parseInt(e.target.value) || 0 })}
-                />
-              </div>
-            </>
-          )}
-        </div>
-      </div>
       {/* Categories & Ratings */}
       <div className="mb-6">
         <h3 className="text-lg font-semibold text-gray-700 mb-3 border-b pb-2">Categories & Ratings</h3>
@@ -767,7 +724,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1001,
@@ -810,7 +770,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1002,
@@ -853,7 +816,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1003,
@@ -896,7 +862,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1004,
@@ -939,7 +908,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1005,
@@ -982,7 +954,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1006,
@@ -1025,7 +1000,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1007,
@@ -1068,7 +1046,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1008,
@@ -1111,7 +1092,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1009,
@@ -1154,7 +1138,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1010,
@@ -1197,7 +1184,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1011,
@@ -1240,7 +1230,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1012,
@@ -1283,7 +1276,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1013,
@@ -1326,7 +1322,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1014,
@@ -1369,7 +1368,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1015,
@@ -1412,7 +1414,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1016,
@@ -1455,7 +1460,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1017,
@@ -1498,7 +1506,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1018,
@@ -1541,7 +1552,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1019,
@@ -1584,7 +1598,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1020,
@@ -1627,7 +1644,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1021,
@@ -1670,7 +1690,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1022,
@@ -1713,7 +1736,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1023,
@@ -1756,7 +1782,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1024,
@@ -1799,7 +1828,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1025,
@@ -1842,7 +1874,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1026,
@@ -1885,7 +1920,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1027,
@@ -1928,7 +1966,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1028,
@@ -1971,7 +2012,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1029,
@@ -2014,7 +2058,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1030,
@@ -2057,7 +2104,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1031,
@@ -2100,7 +2150,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1032,
@@ -2143,7 +2196,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1033,
@@ -2186,7 +2242,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1034,
@@ -2229,7 +2288,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1035,
@@ -2272,7 +2334,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1036,
@@ -2315,7 +2380,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1037,
@@ -2358,7 +2426,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1038,
@@ -2401,7 +2472,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1039,
@@ -2444,7 +2518,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1040,
@@ -2487,7 +2564,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1041,
@@ -2530,7 +2610,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1042,
@@ -2573,7 +2656,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1043,
@@ -2616,7 +2702,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1044,
@@ -2659,7 +2748,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1045,
@@ -2702,7 +2794,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1046,
@@ -2745,7 +2840,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1047,
@@ -2788,7 +2886,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1048,
@@ -2831,7 +2932,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1049,
@@ -2859,7 +2963,7 @@ const INITIAL_RESTAURANTS = [
     "buffet": "No",
     "rooftop": "No",
     "rating": "",
-    "notes": "Deep Fried Hotdogs. Famous. Anthony Bordain. Used to be a rivarly between Hirams and Callahans. Opened over 90 years ago and hasn\u2019t changed since. Takes debit card",
+    "notes": "Deep Fried Hotdogs. Famous. Anthony Bordain. Used to be a rivarly between Hirams and Callahans. Opened over 90 years ago and hasn’t changed since. Takes debit card",
     "source": "Sister Snacking",
     "zip": "07024",
     "yelpRating": "",
@@ -2874,7 +2978,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1050,
@@ -2917,7 +3024,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1051,
@@ -2960,7 +3070,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1052,
@@ -3003,7 +3116,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1053,
@@ -3046,7 +3162,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1054,
@@ -3089,7 +3208,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1055,
@@ -3132,7 +3254,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1056,
@@ -3175,7 +3300,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1057,
@@ -3218,7 +3346,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1058,
@@ -3261,7 +3392,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1059,
@@ -3304,7 +3438,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1060,
@@ -3347,7 +3484,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1061,
@@ -3390,7 +3530,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1062,
@@ -3433,7 +3576,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1063,
@@ -3476,7 +3622,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1064,
@@ -3519,7 +3668,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1065,
@@ -3562,7 +3714,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1066,
@@ -3605,7 +3760,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1067,
@@ -3648,7 +3806,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1068,
@@ -3691,7 +3852,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1069,
@@ -3734,7 +3898,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1070,
@@ -3777,7 +3944,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1071,
@@ -3820,7 +3990,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1072,
@@ -3863,7 +4036,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1073,
@@ -3906,7 +4082,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1074,
@@ -3949,7 +4128,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1075,
@@ -3992,7 +4174,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1076,
@@ -4035,7 +4220,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1077,
@@ -4078,7 +4266,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1078,
@@ -4121,7 +4312,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1079,
@@ -4164,7 +4358,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1080,
@@ -4207,7 +4404,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1081,
@@ -4250,7 +4450,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1082,
@@ -4293,7 +4496,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1083,
@@ -4336,7 +4542,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1084,
@@ -4379,7 +4588,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1085,
@@ -4422,7 +4634,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1086,
@@ -4465,7 +4680,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1087,
@@ -4508,7 +4726,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1088,
@@ -4551,7 +4772,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1089,
@@ -4594,7 +4818,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1090,
@@ -4637,7 +4864,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1091,
@@ -4680,7 +4910,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1092,
@@ -4723,7 +4956,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1093,
@@ -4766,7 +5002,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1094,
@@ -4809,7 +5048,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1095,
@@ -4852,7 +5094,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1096,
@@ -4895,7 +5140,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1097,
@@ -4938,7 +5186,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1098,
@@ -4981,7 +5232,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1099,
@@ -5024,7 +5278,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1100,
@@ -5067,7 +5324,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1101,
@@ -5110,7 +5370,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1102,
@@ -5153,7 +5416,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1103,
@@ -5196,7 +5462,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1104,
@@ -5239,7 +5508,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1105,
@@ -5282,7 +5554,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1106,
@@ -5325,7 +5600,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1107,
@@ -5368,7 +5646,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1108,
@@ -5411,7 +5692,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1109,
@@ -5454,7 +5738,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1110,
@@ -5497,7 +5784,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1111,
@@ -5540,7 +5830,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1112,
@@ -5583,7 +5876,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1113,
@@ -5626,7 +5922,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1114,
@@ -5669,7 +5968,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1115,
@@ -5712,7 +6014,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1116,
@@ -5755,7 +6060,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1117,
@@ -5798,7 +6106,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1118,
@@ -5841,7 +6152,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1119,
@@ -5884,7 +6198,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1120,
@@ -5927,7 +6244,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1121,
@@ -5970,7 +6290,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1122,
@@ -6013,7 +6336,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1123,
@@ -6056,7 +6382,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1124,
@@ -6099,7 +6428,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1125,
@@ -6142,7 +6474,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1126,
@@ -6185,7 +6520,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1127,
@@ -6228,7 +6566,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1128,
@@ -6271,7 +6612,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1129,
@@ -6314,7 +6658,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1130,
@@ -6357,7 +6704,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1131,
@@ -6400,7 +6750,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1132,
@@ -6443,7 +6796,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1133,
@@ -6486,7 +6842,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1134,
@@ -6529,7 +6888,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1135,
@@ -6572,7 +6934,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1136,
@@ -6615,7 +6980,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1137,
@@ -6658,7 +7026,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1138,
@@ -6701,7 +7072,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1139,
@@ -6744,7 +7118,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1140,
@@ -6787,7 +7164,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1141,
@@ -6830,7 +7210,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1142,
@@ -6873,7 +7256,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1143,
@@ -6916,7 +7302,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1144,
@@ -6959,7 +7348,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1145,
@@ -7002,7 +7394,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1146,
@@ -7045,7 +7440,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1147,
@@ -7088,7 +7486,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1148,
@@ -7100,7 +7501,7 @@ const INITIAL_RESTAURANTS = [
     "phone": "732-894-9012",
     "phone2": "",
     "phone3": "",
-    "mainCategory": "Caf\u00e9",
+    "mainCategory": "Café",
     "subCategory": "Pastries",
     "reservations": "No",
     "byob": "No",
@@ -7131,7 +7532,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1149,
@@ -7174,7 +7578,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1150,
@@ -7217,7 +7624,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1151,
@@ -7260,7 +7670,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1152,
@@ -7303,7 +7716,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1153,
@@ -7346,7 +7762,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1154,
@@ -7389,7 +7808,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1155,
@@ -7432,7 +7854,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1156,
@@ -7475,7 +7900,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1157,
@@ -7518,7 +7946,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1158,
@@ -7561,7 +7992,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1159,
@@ -7604,7 +8038,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1160,
@@ -7647,7 +8084,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1161,
@@ -7690,7 +8130,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1162,
@@ -7733,7 +8176,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1163,
@@ -7776,7 +8222,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1164,
@@ -7819,7 +8268,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1165,
@@ -7862,7 +8314,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1166,
@@ -7905,7 +8360,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1167,
@@ -7948,7 +8406,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1168,
@@ -7991,7 +8452,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1169,
@@ -8034,7 +8498,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1170,
@@ -8077,7 +8544,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1171,
@@ -8120,7 +8590,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1172,
@@ -8132,7 +8605,7 @@ const INITIAL_RESTAURANTS = [
     "phone": "732-770-2530",
     "phone2": "",
     "phone3": "",
-    "mainCategory": "Caf\u00e9",
+    "mainCategory": "Café",
     "subCategory": "American",
     "reservations": "No",
     "byob": "No",
@@ -8163,7 +8636,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1173,
@@ -8206,7 +8682,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1174,
@@ -8249,7 +8728,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1175,
@@ -8292,7 +8774,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1176,
@@ -8335,7 +8820,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1177,
@@ -8378,7 +8866,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1178,
@@ -8406,7 +8897,7 @@ const INITIAL_RESTAURANTS = [
     "buffet": "No",
     "rooftop": "No",
     "rating": "",
-    "notes": "Oldest family operated meat retailler in the cuty, since 1932. Pick your cut of steak, and they\u2019ll cook it for you.",
+    "notes": "Oldest family operated meat retailler in the cuty, since 1932. Pick your cut of steak, and they’ll cook it for you.",
     "source": "Picture Perfect Luis",
     "zip": "10001",
     "yelpRating": "",
@@ -8421,7 +8912,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1179,
@@ -8464,7 +8958,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1180,
@@ -8507,7 +9004,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1181,
@@ -8550,7 +9050,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1182,
@@ -8593,7 +9096,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1183,
@@ -8636,7 +9142,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1184,
@@ -8679,7 +9188,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1185,
@@ -8722,7 +9234,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1186,
@@ -8765,7 +9280,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1187,
@@ -8808,7 +9326,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1188,
@@ -8851,7 +9372,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1189,
@@ -8894,7 +9418,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1190,
@@ -8937,7 +9464,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1191,
@@ -8980,7 +9510,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1192,
@@ -9023,7 +9556,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1193,
@@ -9066,7 +9602,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1194,
@@ -9109,7 +9648,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1195,
@@ -9152,7 +9694,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1196,
@@ -9195,7 +9740,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1197,
@@ -9238,7 +9786,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1198,
@@ -9281,7 +9832,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1199,
@@ -9324,7 +9878,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1200,
@@ -9367,7 +9924,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1201,
@@ -9410,7 +9970,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1202,
@@ -9453,7 +10016,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1203,
@@ -9496,7 +10062,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1204,
@@ -9539,7 +10108,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1205,
@@ -9582,7 +10154,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1206,
@@ -9625,7 +10200,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1207,
@@ -9668,11 +10246,14 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1208,
-    "name": "Mossuto's Market & Caf\u00e9",
+    "name": "Mossuto's Market & Café",
     "state": "NJ",
     "city": "Wall",
     "county": "Monmouth County",
@@ -9711,7 +10292,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1209,
@@ -9754,7 +10338,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1210,
@@ -9797,7 +10384,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1211,
@@ -9840,7 +10430,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1212,
@@ -9883,7 +10476,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1213,
@@ -9926,7 +10522,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1214,
@@ -9969,7 +10568,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1215,
@@ -10012,7 +10614,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1216,
@@ -10055,7 +10660,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1217,
@@ -10098,7 +10706,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1218,
@@ -10141,7 +10752,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1219,
@@ -10184,7 +10798,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1220,
@@ -10227,7 +10844,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1221,
@@ -10270,7 +10890,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1222,
@@ -10313,7 +10936,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1223,
@@ -10356,7 +10982,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1224,
@@ -10399,7 +11028,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1225,
@@ -10442,7 +11074,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1226,
@@ -10485,7 +11120,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1227,
@@ -10528,7 +11166,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1228,
@@ -10571,7 +11212,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1229,
@@ -10614,7 +11258,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1230,
@@ -10657,7 +11304,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1231,
@@ -10700,7 +11350,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1232,
@@ -10743,7 +11396,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1233,
@@ -10771,7 +11427,7 @@ const INITIAL_RESTAURANTS = [
     "buffet": "No",
     "rooftop": "No",
     "rating": "7.8",
-    "notes": "She dreams about the chicken scarpiello. Great desserts. Nicole and I went, the food was good, especially the pasta's, Roma was like a carbonara with guanchale, sausage, egg, tomato's. But the Veal cutlet was a bit chewy and tough. Looked beautiful and hige portion but the cutlet wasn\u2019t a great quality cutlet. Chicken was tender but a lot of vinegar. Small pieces of chicken. Spent $360 for an app, 2 pasta's, 2 entrees, and a dessert",
+    "notes": "She dreams about the chicken scarpiello. Great desserts. Nicole and I went, the food was good, especially the pasta's, Roma was like a carbonara with guanchale, sausage, egg, tomato's. But the Veal cutlet was a bit chewy and tough. Looked beautiful and hige portion but the cutlet wasn’t a great quality cutlet. Chicken was tender but a lot of vinegar. Small pieces of chicken. Spent $360 for an app, 2 pasta's, 2 entrees, and a dessert",
     "source": "Meg Things",
     "zip": "07739",
     "yelpRating": "",
@@ -10786,7 +11442,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1234,
@@ -10829,7 +11488,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1235,
@@ -10872,7 +11534,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1236,
@@ -10915,7 +11580,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1237,
@@ -10958,7 +11626,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1238,
@@ -11001,7 +11672,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1239,
@@ -11044,7 +11718,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1240,
@@ -11087,7 +11764,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1241,
@@ -11130,7 +11810,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1242,
@@ -11173,7 +11856,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1243,
@@ -11216,7 +11902,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1244,
@@ -11259,7 +11948,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1245,
@@ -11302,7 +11994,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1246,
@@ -11345,7 +12040,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1247,
@@ -11388,7 +12086,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1248,
@@ -11431,7 +12132,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1249,
@@ -11474,11 +12178,14 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1250,
-    "name": "Hatch44 Caf\u00e9",
+    "name": "Hatch44 Café",
     "state": "NJ",
     "city": "Bradley Beach",
     "county": "Monmouth County",
@@ -11486,7 +12193,7 @@ const INITIAL_RESTAURANTS = [
     "phone": "732-662-7200",
     "phone2": "",
     "phone3": "",
-    "mainCategory": "Caf\u00e9",
+    "mainCategory": "Café",
     "subCategory": "",
     "reservations": "No",
     "byob": "No",
@@ -11517,7 +12224,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1251,
@@ -11560,7 +12270,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1252,
@@ -11603,7 +12316,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1253,
@@ -11646,7 +12362,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1254,
@@ -11689,7 +12408,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1255,
@@ -11732,7 +12454,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1256,
@@ -11775,7 +12500,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1257,
@@ -11818,7 +12546,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1258,
@@ -11861,7 +12592,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1259,
@@ -11904,7 +12638,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1260,
@@ -11947,7 +12684,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1261,
@@ -11990,7 +12730,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1262,
@@ -12033,7 +12776,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1263,
@@ -12076,7 +12822,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1264,
@@ -12119,7 +12868,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1265,
@@ -12162,7 +12914,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1266,
@@ -12205,7 +12960,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1267,
@@ -12248,7 +13006,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1268,
@@ -12291,7 +13052,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1269,
@@ -12334,7 +13098,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1270,
@@ -12377,7 +13144,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1271,
@@ -12420,7 +13190,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1272,
@@ -12463,7 +13236,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1273,
@@ -12506,7 +13282,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1274,
@@ -12549,7 +13328,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1275,
@@ -12592,7 +13374,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1276,
@@ -12635,7 +13420,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1277,
@@ -12678,7 +13466,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1278,
@@ -12721,7 +13512,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1279,
@@ -12764,7 +13558,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1280,
@@ -12807,7 +13604,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1281,
@@ -12850,7 +13650,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1282,
@@ -12893,7 +13696,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1283,
@@ -12936,7 +13742,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1284,
@@ -12979,7 +13788,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1285,
@@ -13022,7 +13834,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1286,
@@ -13065,7 +13880,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1287,
@@ -13108,7 +13926,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1288,
@@ -13151,7 +13972,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1289,
@@ -13194,7 +14018,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1290,
@@ -13237,7 +14064,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1291,
@@ -13280,7 +14110,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1292,
@@ -13323,7 +14156,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1293,
@@ -13366,7 +14202,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1294,
@@ -13409,7 +14248,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1295,
@@ -13452,11 +14294,14 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1296,
-    "name": "Capsized Caf\u00e9",
+    "name": "Capsized Café",
     "state": "NJ",
     "city": "Spring Lake",
     "county": "Monmouth County",
@@ -13495,7 +14340,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1297,
@@ -13538,7 +14386,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1298,
@@ -13581,7 +14432,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1299,
@@ -13624,7 +14478,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1300,
@@ -13667,7 +14524,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1301,
@@ -13710,7 +14570,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1302,
@@ -13753,7 +14616,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1303,
@@ -13796,7 +14662,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1304,
@@ -13839,7 +14708,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1305,
@@ -13882,7 +14754,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1306,
@@ -13925,7 +14800,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1307,
@@ -13968,7 +14846,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1308,
@@ -14011,7 +14892,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1309,
@@ -14054,7 +14938,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1310,
@@ -14097,7 +14984,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1311,
@@ -14140,7 +15030,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1312,
@@ -14183,7 +15076,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1313,
@@ -14226,7 +15122,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1314,
@@ -14269,7 +15168,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1315,
@@ -14312,7 +15214,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1316,
@@ -14355,7 +15260,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1317,
@@ -14398,7 +15306,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1318,
@@ -14441,7 +15352,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1319,
@@ -14484,7 +15398,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1320,
@@ -14527,7 +15444,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1321,
@@ -14570,7 +15490,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1322,
@@ -14613,7 +15536,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1323,
@@ -14656,7 +15582,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1324,
@@ -14699,7 +15628,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1325,
@@ -14742,7 +15674,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1326,
@@ -14785,7 +15720,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1327,
@@ -14828,7 +15766,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1328,
@@ -14871,7 +15812,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1329,
@@ -14914,7 +15858,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1330,
@@ -14957,7 +15904,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1331,
@@ -15000,7 +15950,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1332,
@@ -15043,7 +15996,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1333,
@@ -15086,7 +16042,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1334,
@@ -15129,7 +16088,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1335,
@@ -15172,7 +16134,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1336,
@@ -15215,7 +16180,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1337,
@@ -15258,7 +16226,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1338,
@@ -15301,7 +16272,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "West Long Branch",
     "state3": "NJ",
     "zip3": "07764",
-    "county3": "Monmouth County"
+    "county3": "Monmouth County",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1339,
@@ -15344,7 +16318,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1340,
@@ -15387,7 +16364,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1341,
@@ -15430,7 +16410,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1342,
@@ -15473,7 +16456,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1343,
@@ -15516,7 +16502,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1344,
@@ -15559,7 +16548,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1345,
@@ -15602,7 +16594,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1346,
@@ -15645,7 +16640,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1347,
@@ -15688,7 +16686,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1348,
@@ -15731,7 +16732,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1349,
@@ -15774,7 +16778,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1350,
@@ -15817,7 +16824,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1351,
@@ -15860,7 +16870,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1352,
@@ -15903,7 +16916,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1353,
@@ -15946,7 +16962,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1354,
@@ -15989,7 +17008,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1355,
@@ -16032,7 +17054,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "Asbury Park",
     "state3": "NJ",
     "zip3": "07712",
-    "county3": "Monmouth County"
+    "county3": "Monmouth County",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1356,
@@ -16075,7 +17100,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1357,
@@ -16118,7 +17146,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1358,
@@ -16161,7 +17192,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1359,
@@ -16204,7 +17238,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1360,
@@ -16247,7 +17284,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1361,
@@ -16290,7 +17330,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "Bridgewater",
     "state3": "NJ",
     "zip3": "08807",
-    "county3": "Somerset County"
+    "county3": "Somerset County",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1362,
@@ -16333,7 +17376,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1363,
@@ -16376,7 +17422,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1364,
@@ -16404,7 +17453,7 @@ const INITIAL_RESTAURANTS = [
     "buffet": "No",
     "rooftop": "No",
     "rating": "",
-    "notes": "Doesn\u2019t look like it\u2019s a restaurante",
+    "notes": "Doesn’t look like it’s a restaurante",
     "source": "",
     "zip": "08831",
     "yelpRating": "",
@@ -16419,7 +17468,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1365,
@@ -16462,7 +17514,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1366,
@@ -16505,7 +17560,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1367,
@@ -16548,7 +17606,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1368,
@@ -16591,7 +17652,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1369,
@@ -16634,7 +17698,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1370,
@@ -16677,7 +17744,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1371,
@@ -16720,7 +17790,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1372,
@@ -16763,7 +17836,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1373,
@@ -16806,7 +17882,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1374,
@@ -16849,7 +17928,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1375,
@@ -16892,7 +17974,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1376,
@@ -16935,7 +18020,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1377,
@@ -16978,7 +18066,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1378,
@@ -17021,7 +18112,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1379,
@@ -17064,7 +18158,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1380,
@@ -17107,7 +18204,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1381,
@@ -17150,7 +18250,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1382,
@@ -17193,7 +18296,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1383,
@@ -17236,7 +18342,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1384,
@@ -17279,7 +18388,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1385,
@@ -17322,7 +18434,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1386,
@@ -17365,7 +18480,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1387,
@@ -17408,11 +18526,14 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1388,
-    "name": "Caf\u00e9 2825",
+    "name": "Café 2825",
     "state": "NJ",
     "city": "Atlantic City",
     "county": "Atlantic County",
@@ -17451,7 +18572,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1389,
@@ -17494,7 +18618,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1390,
@@ -17537,7 +18664,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1391,
@@ -17580,7 +18710,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1392,
@@ -17623,7 +18756,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1393,
@@ -17666,7 +18802,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1394,
@@ -17709,7 +18848,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1395,
@@ -17752,7 +18894,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1396,
@@ -17795,7 +18940,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1397,
@@ -17838,7 +18986,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1398,
@@ -17881,7 +19032,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1399,
@@ -17924,7 +19078,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1400,
@@ -17967,7 +19124,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1401,
@@ -18010,7 +19170,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1402,
@@ -18053,7 +19216,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1403,
@@ -18096,7 +19262,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1404,
@@ -18139,7 +19308,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1405,
@@ -18182,7 +19354,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1406,
@@ -18225,11 +19400,14 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1407,
-    "name": "Caf\u00e9 Habana",
+    "name": "Café Habana",
     "state": "NY",
     "city": "Manhattan",
     "county": "New York County",
@@ -18268,7 +19446,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1408,
@@ -18311,7 +19492,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1409,
@@ -18354,7 +19538,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1410,
@@ -18397,7 +19584,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1411,
@@ -18440,7 +19630,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1412,
@@ -18483,7 +19676,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1413,
@@ -18526,7 +19722,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1414,
@@ -18569,7 +19768,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1415,
@@ -18612,7 +19814,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1416,
@@ -18655,7 +19860,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1417,
@@ -18698,7 +19906,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1418,
@@ -18741,7 +19952,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1419,
@@ -18784,7 +19998,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1420,
@@ -18827,7 +20044,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1421,
@@ -18870,7 +20090,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1422,
@@ -18913,7 +20136,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1423,
@@ -18956,11 +20182,14 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1424,
-    "name": "Marina Caf\u00e9 Restaurant & Tiki Bar",
+    "name": "Marina Café Restaurant & Tiki Bar",
     "state": "NY",
     "city": "Staten Island",
     "county": "Richmond County",
@@ -18999,7 +20228,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1425,
@@ -19042,7 +20274,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1426,
@@ -19085,7 +20320,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1427,
@@ -19128,7 +20366,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1428,
@@ -19171,7 +20412,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1429,
@@ -19214,7 +20458,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1430,
@@ -19257,7 +20504,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1431,
@@ -19300,7 +20550,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1432,
@@ -19343,7 +20596,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1433,
@@ -19386,7 +20642,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1434,
@@ -19429,7 +20688,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1435,
@@ -19472,7 +20734,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1436,
@@ -19515,7 +20780,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1437,
@@ -19558,7 +20826,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1438,
@@ -19601,7 +20872,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1439,
@@ -19644,7 +20918,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1440,
@@ -19687,7 +20964,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1441,
@@ -19730,7 +21010,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1442,
@@ -19773,7 +21056,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1443,
@@ -19816,7 +21102,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1444,
@@ -19859,7 +21148,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1445,
@@ -19902,7 +21194,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1446,
@@ -19945,7 +21240,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1447,
@@ -19988,7 +21286,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1448,
@@ -20031,7 +21332,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1449,
@@ -20074,7 +21378,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1450,
@@ -20117,7 +21424,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1451,
@@ -20160,7 +21470,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1452,
@@ -20203,7 +21516,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1453,
@@ -20246,7 +21562,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1454,
@@ -20289,7 +21608,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1455,
@@ -20332,7 +21654,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1456,
@@ -20375,7 +21700,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1457,
@@ -20418,7 +21746,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1458,
@@ -20461,7 +21792,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1459,
@@ -20504,7 +21838,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1460,
@@ -20532,7 +21869,7 @@ const INITIAL_RESTAURANTS = [
     "buffet": "No",
     "rooftop": "No",
     "rating": "",
-    "notes": "Cookies and canolis; Next to Sally\u2019s and Frank pepes; great snowball cookies. Indoor seating also",
+    "notes": "Cookies and canolis; Next to Sally’s and Frank pepes; great snowball cookies. Indoor seating also",
     "source": "",
     "zip": "06510",
     "yelpRating": "",
@@ -20547,7 +21884,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1461,
@@ -20590,7 +21930,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1462,
@@ -20633,7 +21976,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1463,
@@ -20676,7 +22022,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1464,
@@ -20719,7 +22068,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1465,
@@ -20762,7 +22114,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1466,
@@ -20805,7 +22160,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1467,
@@ -20848,7 +22206,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1468,
@@ -20891,7 +22252,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1469,
@@ -20934,7 +22298,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1470,
@@ -20977,7 +22344,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1471,
@@ -21005,7 +22375,7 @@ const INITIAL_RESTAURANTS = [
     "buffet": "No",
     "rooftop": "No",
     "rating": "7.2",
-    "notes": "Pizza was pretty light, coal fired. Wouldn\u2019t get the fig again but the burratta pizza was good. Rig and Gnocchi were good but needed grated cheese. Ricotta was th ebest thing alogn with the steaks and brussel sprouts",
+    "notes": "Pizza was pretty light, coal fired. Wouldn’t get the fig again but the burratta pizza was good. Rig and Gnocchi were good but needed grated cheese. Ricotta was th ebest thing alogn with the steaks and brussel sprouts",
     "source": "",
     "zip": "07728",
     "yelpRating": "",
@@ -21020,7 +22390,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1472,
@@ -21063,7 +22436,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1473,
@@ -21106,7 +22482,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1474,
@@ -21149,7 +22528,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1475,
@@ -21192,7 +22574,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1476,
@@ -21235,7 +22620,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1477,
@@ -21278,7 +22666,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1478,
@@ -21321,7 +22712,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1479,
@@ -21364,7 +22758,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1480,
@@ -21407,7 +22804,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1481,
@@ -21450,7 +22850,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1482,
@@ -21493,7 +22896,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1483,
@@ -21536,11 +22942,14 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1484,
-    "name": "Caf\u00e9 Spaghetti",
+    "name": "Café Spaghetti",
     "state": "NY",
     "city": "Brooklyn",
     "county": "Kings County",
@@ -21579,7 +22988,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1485,
@@ -21622,7 +23034,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1486,
@@ -21665,11 +23080,14 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1487,
-    "name": "Gino's Pastry Shop & Caf\u00e9",
+    "name": "Gino's Pastry Shop & Café",
     "state": "NY",
     "city": "Bronx",
     "county": "Bronx County",
@@ -21708,7 +23126,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1488,
@@ -21751,7 +23172,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1489,
@@ -21794,7 +23218,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1490,
@@ -21837,7 +23264,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1491,
@@ -21880,7 +23310,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1492,
@@ -21923,7 +23356,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1493,
@@ -21966,7 +23402,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1494,
@@ -22009,7 +23448,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1495,
@@ -22022,7 +23464,7 @@ const INITIAL_RESTAURANTS = [
     "phone2": "",
     "phone3": "",
     "mainCategory": "American",
-    "subCategory": "Caf\u00e9",
+    "subCategory": "Café",
     "reservations": "Yes",
     "byob": "No",
     "bar": "Yes",
@@ -22052,7 +23494,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1496,
@@ -22095,7 +23540,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1497,
@@ -22138,7 +23586,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1498,
@@ -22181,7 +23632,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1499,
@@ -22224,7 +23678,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1500,
@@ -22267,7 +23724,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1501,
@@ -22310,7 +23770,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1502,
@@ -22353,7 +23816,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1503,
@@ -22396,7 +23862,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1504,
@@ -22439,11 +23908,14 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1505,
-    "name": "Caf\u00e9 Crevier",
+    "name": "Café Crevier",
     "state": "NJ",
     "city": "Denville",
     "county": "Morris County",
@@ -22482,7 +23954,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1506,
@@ -22525,7 +24000,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1507,
@@ -22568,7 +24046,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1508,
@@ -22611,7 +24092,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1509,
@@ -22654,7 +24138,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1510,
@@ -22697,7 +24184,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1511,
@@ -22740,7 +24230,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1512,
@@ -22783,7 +24276,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1513,
@@ -22826,7 +24322,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1514,
@@ -22869,7 +24368,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1515,
@@ -22912,7 +24414,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1516,
@@ -22955,7 +24460,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1517,
@@ -22998,7 +24506,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1518,
@@ -23041,11 +24552,14 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1519,
-    "name": "Sabrina's Caf\u00e9",
+    "name": "Sabrina's Café",
     "state": "NJ",
     "city": "Collingswood",
     "county": "Camden County",
@@ -23084,7 +24598,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1520,
@@ -23127,7 +24644,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1521,
@@ -23155,7 +24675,7 @@ const INITIAL_RESTAURANTS = [
     "buffet": "No",
     "rooftop": "No",
     "rating": "",
-    "notes": "Historic General Store, post office, and boarding house operating as a caf\u00e9, bar and Inn Wednesday through Sunday, no reservations. Looks nice around the holidays. Known for their brunch",
+    "notes": "Historic General Store, post office, and boarding house operating as a café, bar and Inn Wednesday through Sunday, no reservations. Looks nice around the holidays. Known for their brunch",
     "source": "NJ Hipsturbia",
     "zip": "07480",
     "yelpRating": "",
@@ -23170,7 +24690,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1522,
@@ -23213,7 +24736,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1523,
@@ -23256,7 +24782,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1524,
@@ -23299,7 +24828,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1525,
@@ -23342,7 +24874,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1526,
@@ -23385,7 +24920,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1527,
@@ -23428,7 +24966,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1528,
@@ -23471,7 +25012,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1529,
@@ -23514,7 +25058,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1530,
@@ -23557,7 +25104,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1531,
@@ -23600,7 +25150,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1532,
@@ -23643,7 +25196,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1533,
@@ -23686,7 +25242,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1534,
@@ -23729,7 +25288,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1535,
@@ -23772,7 +25334,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1536,
@@ -23815,7 +25380,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1537,
@@ -23858,7 +25426,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1538,
@@ -23901,7 +25472,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1539,
@@ -23944,7 +25518,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1540,
@@ -23987,7 +25564,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1541,
@@ -24030,7 +25610,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1542,
@@ -24073,7 +25656,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1543,
@@ -24116,7 +25702,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1544,
@@ -24159,7 +25748,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1545,
@@ -24202,7 +25794,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1546,
@@ -24245,7 +25840,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1547,
@@ -24288,7 +25886,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1548,
@@ -24331,7 +25932,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1549,
@@ -24374,7 +25978,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1550,
@@ -24417,7 +26024,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1551,
@@ -24460,7 +26070,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1552,
@@ -24503,7 +26116,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1553,
@@ -24546,7 +26162,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "Spring Lake",
     "state3": "NJ",
     "zip3": "07762",
-    "county3": "Monmouth County"
+    "county3": "Monmouth County",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1554,
@@ -24589,7 +26208,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1555,
@@ -24632,7 +26254,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1556,
@@ -24675,7 +26300,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1557,
@@ -24718,7 +26346,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1558,
@@ -24761,7 +26392,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1559,
@@ -24804,7 +26438,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1560,
@@ -24847,7 +26484,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1561,
@@ -24890,7 +26530,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1562,
@@ -24933,7 +26576,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1563,
@@ -24976,7 +26622,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1564,
@@ -25019,7 +26668,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1565,
@@ -25062,7 +26714,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1566,
@@ -25105,7 +26760,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1567,
@@ -25148,7 +26806,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1568,
@@ -25191,7 +26852,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1569,
@@ -25234,7 +26898,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1570,
@@ -25277,7 +26944,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1571,
@@ -25320,7 +26990,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1572,
@@ -25363,7 +27036,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   },
   {
     "id": 1573,
@@ -25406,7 +27082,10 @@ const INITIAL_RESTAURANTS = [
     "city3": "",
     "state3": "",
     "zip3": "",
-    "county3": ""
+    "county3": "",
+    "visited": false,
+    "lastVisited": "",
+    "visitCount": 0
   }
 ];
 
@@ -25447,7 +27126,6 @@ function RestaurantManager() {
   const [filterPriceRating, setFilterPriceRating] = useState('all');
   const [filterServiceRating, setFilterServiceRating] = useState('all');
   const [filterOceanView, setFilterOceanView] = useState(false);
-  const [filterVisited, setFilterVisited] = useState('all');
   const [filterBYOB, setFilterBYOB] = useState(false);
   const [filterBar, setFilterBar] = useState(false);
   const [filterOutdoorSeating, setFilterOutdoorSeating] = useState(false);
@@ -25543,7 +27221,6 @@ function RestaurantManager() {
     const matchesBYOB = !filterBYOB || r.byob === 'Yes';
     const matchesBar = !filterBar || r.bar === 'Yes';
     const matchesOutdoorSeating = !filterOutdoorSeating || r.outdoorSeating === 'Yes';
-    const matchesVisited = filterVisited === 'all' || (filterVisited === 'visited' && r.visited) || (filterVisited === 'not-visited' && !r.visited);
     const matchesLiveMusic = !filterLiveMusic || r.liveMusic === 'Yes';
     
     // Advanced filters
@@ -25552,7 +27229,7 @@ function RestaurantManager() {
     const matchesCity = !filterCity || r.city.toLowerCase().includes(filterCity.toLowerCase());
     
     return matchesSearch && matchesCategory && matchesFoodRating && matchesPriceRating && matchesServiceRating &&
-           matchesOceanView && matchesBYOB && matchesBar && matchesOutdoorSeating && matchesLiveMusic && matchesVisited &&
+           matchesOceanView && matchesBYOB && matchesBar && matchesOutdoorSeating && matchesLiveMusic &&
            matchesState && matchesCounty && matchesCity;
   }).sort((a, b) => a.name.localeCompare(b.name));
 
@@ -25721,7 +27398,6 @@ function RestaurantManager() {
     setFilterBar(false);
     setFilterOutdoorSeating(false);
     setFilterLiveMusic(false);
-    setFilterVisited('all');
     setFilterState('all');
     setFilterCounty('all');
     setFilterCity('');
@@ -25754,7 +27430,7 @@ function RestaurantManager() {
       r.rating, r.priceRating, r.serviceRating,
       r.websiteURL, r.hoursOfOperation, r.reservationsRequired, r.parkingSituation,
       r.groupSize, r.specialOccasions, r.menuHighlights,
-      r.notes, r.source, r.visited || 'No', r.lastVisited || '', r.visitCount || 0
+      r.notes, r.source
     ]);
 
     let csv = headers.join(',') + '\n';
@@ -25920,24 +27596,6 @@ function RestaurantManager() {
                         ? 'bg-pink-500 text-white shadow-lg transform scale-105' 
                         : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                     }`}
-
-                  <button
-                    type="button"
-                    onClick={() => {
-                      if (filterVisited === 'all') setFilterVisited('visited');
-                      else if (filterVisited === 'visited') setFilterVisited('not-visited');
-                      else setFilterVisited('all');
-                    }}
-                    className={`px-3 py-2 rounded-lg font-medium text-sm transition-all ${
-                      filterVisited === 'visited'
-                        ? 'bg-green-500 text-white shadow-lg transform scale-105'
-                        : filterVisited === 'not-visited'
-                        ? 'bg-orange-500 text-white shadow-lg transform scale-105'
-                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                    }`}
-                  >
-                    {filterVisited === 'visited' ? '✅ Visited' : filterVisited === 'not-visited' ? '⭕ Not Visited' : '🔵 All'}
-                  </button>
                   >
                     🎵 Live Music
                   </button>
