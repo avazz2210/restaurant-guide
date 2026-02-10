@@ -27274,7 +27274,7 @@ function RestaurantManager() {
     const matchesCity = !filterCity || r.city.toLowerCase().includes(filterCity.toLowerCase());
     
     return matchesSearch && matchesCategory && matchesFoodRating && matchesPriceRating && matchesServiceRating &&
-           matchesOceanView && matchesBYOB && matchesBar && matchesOutdoorSeating && matchesLiveMusic &&&& matchesVisited &&
+           matchesOceanView && matchesBYOB && matchesBar && matchesOutdoorSeating && matchesLiveMusic && matchesVisited &&
            matchesState && matchesCounty && matchesCity;
   }).sort((a, b) => a.name.localeCompare(b.name));
 
